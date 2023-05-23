@@ -1,0 +1,39 @@
+name: master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install AWS CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y awscli
+
+      - name: Configure AWS credentials
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws configure set default.region ${{ secrets.AWS_REGION }}
+
+      - name: SSH into EC2 instance and pull code
+        run: |
+          echo "$EC2_PRIVATE_KEY" > key.pem
+          chmod 400 key.pem
+          ssh -i key.pem ubuntu@$EC2_INSTANCE_IP "cd /home/ubuntu/Apexcrew && git pull"
+
+      - name: Start Docker Compose
+        run: |
+          ssh -i key.pem ubuntu@$EC2_INSTANCE_IP "cd /home/ubuntu/Apexcrew && docker-compose up -d"
+
+      - name: Cleanup
+        run: |
+          rm key.pem
