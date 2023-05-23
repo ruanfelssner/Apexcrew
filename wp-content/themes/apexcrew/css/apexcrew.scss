@@ -1,0 +1,790 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+/*#2022*/
+$principal_color : #ED1B48;
+$principal_color_text: #FFF;
+$secundary_color : #00ecff;
+$bg_principal: #000;
+
+body{
+    font-family: 'Inter', 'Bebas Neue', 'Roboto', Arial, Helvetica, sans-serif;
+    padding-bottom:50px;
+}
+a{
+    color:$principal_color;
+    text-decoration: none;
+    &:hover{
+        opacity:.9;
+    }
+}
+header{
+    a.logo{
+       width:80%;       
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin: 10px auto 0;
+        img{
+            max-height:130px;
+        }
+    }
+    .menu{
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        &::-webkit-scrollbar {
+            display: none;
+          }
+        
+        .categoriaButton{
+            display:inline-block;
+            margin:10px 4px;
+            a{
+                font-family:'Bebas Neue';
+                text-transform: uppercase;
+                color:#000;
+                text-decoration: none;
+                font-size:1.2rem;
+                display:block;
+                text-align: center;
+                .icon{
+                    width:75px;
+                    height:75px;
+                    border-radius:50%;
+                    box-shadow: 1px 2px 0px 1px rgb(0 0 0 / 75%);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom:.5rem;                    
+                    background-color:#FFF;
+                    transition: background-color 1s;
+                    img{
+                        max-width:65px;
+                        max-height:65px;
+                        transition: all 1s;
+                    }
+                }
+                .title{
+                    transition: all .5s;
+                }
+                
+                
+                &:hover{
+                    .icon{
+                        background-color:#c3c3c3;
+                        img{
+                            transform: scale(1.1);
+                        }
+                    }
+                    .title{
+                        font-size:1.25rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.woocommerce-MyAccount-navigation{
+    ul{
+        padding:0;
+        li{
+            list-style:none;
+            a{
+                text-decoration: none;
+                font-family:'Bebas Neue';
+                text-transform: uppercase;
+                color:#000;
+                text-decoration: none;
+                font-size:1.2rem;
+                display:block;
+            }
+            &:hover{
+                a{
+                    opacity:0.8;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.archive .product_type_yith_bundle{
+    display:none;
+}
+
+.woocommerce-button, .woocommerce-Button{
+    background-color: $principal_color !important;
+    color:$principal_color_text !important;
+    text-transform: uppercase;
+}
+
+.woocommerce-info{
+    border-top-color:$principal_color !important;
+    &::before{
+        color:$principal_color !important;
+    }
+}
+
+.woocommerce-Input, .woocommerce-input{
+    border-radius: 6px;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid $principal_color;
+}
+
+.mark, mark{    
+    background-color: #d1d1d1;
+    padding:0.3rem 0.5rem;
+    margin:0 0.1rem;
+    font-weight: bold;
+}
+
+.post-type-archive-product{
+    .page-title{        
+        font-weight:700;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+    .woocommerce-result-count{
+        font-size: 0.8rem;
+    }
+    .woocommerce-ordering{
+        select{
+            background:$bg_principal;
+            color: #FFF;
+            padding: 0.5rem;
+            font-weight: bold;
+        }
+    }
+    .fswp_in_cash_price {
+        order:4;
+        font-size: 1.5rem;
+        color: #000;
+        .fswp_in_cash_suffix{
+            font-size: .8rem;
+        }
+    }
+    .fswp_installments_price {
+        order: 5;
+    }
+}
+
+.woocommerce div.product{
+    transition: all 0.75s;
+    a{
+        img{            
+            border-radius: 5px;
+            box-shadow: 2px 2px 3px #FFF;
+            border: 1px solid #8b8b8b;
+            transition: all 0.75s;
+        }
+    }
+    &:hover{
+        opacity:0.8;
+        a{
+            img{
+                box-shadow:2px 2px 3px #00000036;
+            }
+        }
+    }
+}
+
+.yith-ajaxsearchform-container{
+    margin-top:20px;
+    .yith-s{
+        padding: 5px 10px;
+        min-width:400px;
+        border-radius: 30px;
+        margin-right: 20px;
+    }
+    #yith-searchsubmit{
+        background: $bg_principal;
+        border: 0;
+        padding: 7px 20px;
+        border-radius: 30px;
+        color: #FFF;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+.single-product{
+    .product_title {
+        background: $bg_principal;
+        color: #FFF;
+        text-transform: uppercase;
+        padding: .5rem !important;
+        display: inline-block;
+    }
+    .woocommerce-product-details__short-description{
+        border-top: 1px solid #f2f2f2;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f2f2f2;
+    }
+    .single_add_to_cart_button {
+        background-color:#000 !important;
+    }
+    .fswp_in_cash_price {
+        margin-bottom:1rem;
+    }
+    .containerCalculator{
+        display: block;
+        border: 1px solid #c1c1c1;
+        background-color: #f7f7f7;
+        margin-top:1rem;
+        .calculatorRow{
+            p{
+                font-weight: bold;
+                text-transform: uppercase;
+                margin-bottom: 5px;
+                display: inline-block;
+            }
+            input.iptCep {
+                display: inline-block;
+                width: 100% !important;
+            }
+        }
+    }
+    
+    .calcular-frete-loader{
+        img{
+            width:initial !important;
+            max-width: initial !important;
+        }
+    }
+    .resultado-frete{
+        margin-top: 1rem;
+        border-top: 1px solid #c1c1c1;
+        padding-top: 1rem;
+        #destiny-shipping-mehor-envio{
+            margin-top: 1rem;
+            display: block;
+            color: #979797;
+        }
+        td{
+            border-bottom:1px solid #FFF;
+            background:#000;
+            color:#FFF;
+        }
+    }
+    #wpb_wiz_gallery{
+        margin-top: 1rem;
+        .woocommerce-product-gallery__image{
+            width:initial !important;
+            max-width:25%;
+            img{
+                width:100%;
+                height:100%;
+            }
+        }
+    }
+    .variations{
+        .label{
+            display:block;
+            .variation_name_label{
+                font-weight:bold;
+            }
+        }
+        .value{
+            display:block;
+            .thwvsf-item-span{
+                font-weight:bold;
+            }
+        }
+    }
+    .zoomWrapper{
+        position: relative;;
+    }
+    .woocommerce-variation{
+        
+        margin-bottom:1rem;
+        padding-bottom:1rem;
+        border-bottom:1px solid #f2f2f2;
+        .woocommerce-Price-amount{        
+            color:#333 !important;
+            font-size: 24px !important;
+            font-weight: bold !important;
+            line-height: 16px;
+            margin-bottom:0 !important;
+        }
+        
+        span.parcelamento{
+            color: #333;
+            font-size: 12px;
+            display:block;
+        }
+    }
+    .reset_variations{
+        display:none;
+    }
+    .single_variation_wrap{
+        
+        margin-top:1rem;
+        padding-top:1rem;
+        border-top:1px solid #f2f2f2;
+        .quantity{
+            display:inline-block;
+        }
+    }
+}
+.related{
+    margin-top:2rem;
+    border-top:1px solid #f2f2f2;
+    width: 100%;
+    display: block;
+    clear: both;
+    .price{
+        display:none !important;
+    }
+    &.products{
+        h2:first-child{
+            
+        font-size: 24px !important;
+        background: $bg_principal;
+        color: #FFF;
+        text-transform: uppercase;
+        padding: .5rem !important;
+        display: inline-block;
+        margin-bottom:1rem;
+        }
+    }
+}
+.orderLoja{
+    p{
+        display:none;
+    }
+}
+.product{
+    a{
+        text-decoration: none;
+    }
+    h2.woocommerce-loop-product__title{
+        font-weight: bold;
+        color:#000;
+        padding:0;
+        font-size: 1rem;
+        margin:.5rem 0;
+    }
+    .add_to_cart_button{
+        display:none !important;
+    }
+    h2.price{        
+        color:#333 !important;
+        font-size: 24px !important;
+        font-weight: bold !important;
+        line-height: 16px;
+        margin-bottom:0 !important;
+    }
+    span.parcelamento{
+        color: #333;
+        font-size: 12px;
+    }
+    img{
+        margin-bottom:0 !important;
+        max-width: 100%;
+        height: auto !important;
+    }
+}
+
+.woocommerce-page #sidebar {
+    display: none;
+}
+
+.woocommerce-message{
+    border-top-color: $principal_color;
+    &::before{
+        color:$principal_color;
+    }
+    .button{
+        background-color: #000000;
+        color: $secundary_color;
+        border-radius: 20px;
+        transition: all .5s;
+    }
+}
+
+.woocommerce table.shop_table tbody th, .woocommerce table.shop_table tfoot td, .woocommerce table.shop_table tfoot th{
+    border-top:0 !important; 
+}
+.table>:not(:first-child){
+    border-top:0 !important;
+}
+.product-name{
+    a{        
+        color: #000 !important;
+        font-weight: bold;
+        padding:5px;
+        text-decoration:none;
+    }
+}
+.product-thumbnail{
+    text-align: left;
+        img.size-woocommerce_thumbnail{
+            width: 200px !important;
+        }
+}
+.btn-secondary{
+    border-radius: 20px;
+    transition: all .5s;
+    padding-right:30px;
+    padding-left:30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #000;
+}
+
+.shipping-calculator-button{    
+    background-color: #000000;
+    color: $secundary_color;
+    border-radius: 20px;
+    transition: all .5s;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    padding:10px 15px;
+    &:hover{
+        color: $principal_color;
+    }
+}
+
+#add_payment_method .wc-proceed-to-checkout a.checkout-button, .woocommerce-cart .wc-proceed-to-checkout a.checkout-button, .woocommerce-checkout .wc-proceed-to-checkout a.checkout-button{
+    background-color: #000;
+    color: #00ecff;
+    border-radius: 20px;
+    transition: all .5s;
+    padding-right: 30px;
+    padding-left: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border:0;
+    &:hover{
+        color: $principal_color;
+    }
+}
+
+.btn-primary{    
+    border-radius: 20px;
+    transition: all .5s;
+    padding-right:30px;
+    padding-left:30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #000;
+    color: $secundary_color;
+    border:0;
+    &:hover{
+        background-color: #000;
+        color: $principal_color;
+    }
+}
+
+.conteudoGeral{
+    h1, h2, h3, h4, h5, h6{
+        overflow-wrap: break-word;
+        text-transform: uppercase;
+        background: $principal_color;
+        color: #FFF;
+        padding: 10px 15px;
+        text-align: center;
+    }
+}
+
+.quantity{
+    margin:10px 0;
+}
+
+.woocommerce a.remove{
+    margin: 0 auto;
+}
+.thwvsf-rad-li {
+    width:100% !important;
+}
+footer{
+    background:$principal_color;
+    padding:.5rem 0;
+    color:#FFF;
+    position:fixed;
+    width:100%;
+    bottom:0;
+    z-index:999;
+    p{
+        margin-bottom:0;
+    }
+    a{
+        img{
+            transition: all 1.5s;
+            max-height: 36px;
+        }
+        &:hover{
+            img{
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.cross-sells{
+    .product h1, .product h2, .product h3, .product h4, .product h5, .product h6{
+        background:initial !important;
+        padding:0;
+        text-align:left;
+    }
+}
+
+
+.coupon{
+    
+    .input-group-btn {
+        margin-top:10px;
+        width:100%;
+        input{
+            width: initial !important;
+        }
+    }
+    #coupon_code{
+        border-radius: 20px;
+        margin-top:10px;
+        width:initial !important;
+    }
+    .btn{
+        background-color: #000000;
+        color: $secundary_color;
+        border-radius: 20px;
+        transition: all .5s;
+        padding-right:30px;
+        padding-left:30px;
+        font-weight: bold;
+        text-transform: uppercase;
+        &:hover{
+            color: $principal_color;
+        }
+    }
+}
+
+
+
+.background-category{
+    $category_color : #FFF;
+    $category_color_text: #000;
+    background:$category_color;
+    .produtos{
+        position:relative;
+        padding-bottom: 30px;
+        overflow-x:hidden;
+    }
+    .header_title{
+        background:$principal_color;
+        h1{
+            font-family: 'Bebas Neue';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 48px;
+            line-height: initial;
+            text-align: center;
+            letter-spacing: 0.06em;
+            color:$principal_color_text;
+            text-transform: uppercase;
+            margin-bottom:0;
+        }
+    }
+    h2.price{        
+        color:#000 !important;
+    }
+    span.parcelamento{
+        color: #000;
+    }
+    .price_new, .title_new{
+        h1, h2{            
+            color:#3a3a3a;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 17px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom:5px;
+        }
+        span{
+            line-height:14px;
+        }
+    }
+    .title_new{
+        padding-top:1rem;
+    }
+    .product_type_variable, .add_to_cart_button, .product_type_simple {
+        display:none !important;
+    }
+    .carousl,
+        .carousel-innr,
+        .carousel-inner > .carousel-item {
+            overflow: hidden;
+        }
+        .carousel-inner > .carousel-item.active,
+        .carousel-inner > .carousel-item-next {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .carousel-control-prev {
+            z-index: 2000;
+            left: 2%;
+        }
+
+        .carousel-control-next {
+            z-index: 2000;
+            right: 2%;
+        }
+        .carousel-indicators{
+            position:absolute;
+            display:block;
+            margin:0;
+            top: 0;
+            button{
+                background:#a7a7a7ef;
+                border-radius:50%;
+                width:7px;
+                height:7px;
+                margin:0;
+                padding:0;
+                border:0;
+                margin:5px;
+            }
+        }
+        
+        .col-dynamic{
+            width:95%;
+            margin-right:2.5%;
+            margin-top: 40px;
+            a{
+                text-decoration:none;
+            }
+        }
+}
+
+.outlet{
+    .background-category{
+        background: #000;
+        .price_new, .title_new{
+            h1, h2{   
+                color:#000;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .navbar{        
+        .navbar-nav{
+            width:40%;
+            margin-top:0 !important;
+            .nav-item{            
+                padding: 0;
+                .dynamic-text{
+                    display:none;
+                }
+            }
+            &.dynamic-menu{
+                .nav-item{
+                    &.menu-item-has-children{
+                        padding-right:2rem;
+                        .dropdown-menu{
+                            left: 0;
+                            padding: 1rem;
+                            min-width: 20rem;
+                        }
+
+                        &::after{
+                            top:calc(50% - 15px) !important;
+                            right:1.5rem !important;
+                        }
+                    }
+                }
+            }
+        }
+        .navbar-brand{
+            width:20%;
+        }
+        &.menuShort{
+          .navbar-brand{
+              img{
+                    height:95px;
+                    margin-bottom: -10px;
+              }
+          }  
+        }
+    }
+}
+@media (min-width: 576px) {
+    
+    #coupon_code{
+        margin-right: 30px;
+    }
+    
+    .loja{        
+        .content{
+            position: relative;            
+            .woocommerce-ordering{
+                top: 0;
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+    .woocommerce-cart table.cart .product-thumbnail{
+        display: block !important;
+        text-align: center !important;
+    }
+    .woocommerce-page table.cart td.actions .coupon input, .coupon #coupon_code{
+        width:initial !important;
+    }
+}
+
+
+
+.realdrift_page{
+    &.background-category{
+        background: #000;
+        .price_new, .title_new{
+            h1, h2{   
+                color:#FFF !important;
+            }
+        }
+    }
+    .header_title{
+        background:#000;
+        padding:1rem 0;
+        h1{
+            display:none;
+        }
+        .banners_real{
+            display:block !important;
+        }
+    }
+}
+
+
+.fausto_drift{
+    &.background-category{
+        background: #46184f;
+        .price_new, .title_new{
+            h1, h2{   
+                color:#FFF !important;
+            }
+        }
+    }
+    .header_title{
+        background:#46184f;
+        padding:1rem 0;
+        h1{
+            display:none;
+        }
+        .banners_fausto{
+            display:block !important;
+        }
+    }
+}
