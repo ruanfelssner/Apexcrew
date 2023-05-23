@@ -12,6 +12,8 @@ services:
       MYSQL_DATABASE: ${DB_NAME}
       MYSQL_USER: ${DB_USER}
       MYSQL_PASSWORD: ${DB_PASSWORD}
+    env_file:
+      - .env
     networks: 
       - app-network
 
@@ -30,6 +32,8 @@ services:
       WORDPRESS_DB_USER: ${DB_USER}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
       WORDPRESS_DB_NAME: ${DB_NAME}
+    env_file:
+      - .env
     networks: 
       - app-network
 
@@ -46,6 +50,8 @@ services:
       PMA_UPLOAD_MAX_FILESIZE: 64M
       PMA_POST_MAX_SIZE: 64M
       UPLOAD_LIMIT: 64M
+    env_file:
+      - .env
     networks: 
       - app-network
 
