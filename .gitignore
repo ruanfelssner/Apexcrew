@@ -4,7 +4,9 @@ ignore/
 /wp-admin/
 /wp-content/index.php
 /wp-content/plugins/
-/wp-content/themes/
+/wp-content/themes/twentytwentyone
+/wp-content/themes/twentytwentytwo
+/wp-content/themes/twentytwentythree
 /wp-includes/
 /index.php
 /license.txt
@@ -15,3 +17,5 @@ ignore/
 /wp-content/uploads/
 *.log
 /.htaccess
+
+/wp-content/themes/apexcrew*
