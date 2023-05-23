@@ -26,7 +26,34 @@ jobs:
 
       - name: SSH into EC2 instance and pull code
         run: |
-          echo "${{ secrets.EC2_PRIVATE_KEY }}" > key.pem
+          echo "-----BEGIN RSA PRIVATE KEY-----
+            MIIEowIBAAKCAQEAh2sC/HR6NJHOXQ295dkcfrPwmhMA6ZxpyBYGVNiviW1Q0sk1
+            FJiILDyyeb6+BjGRH8vMNBaF2zHARADaLaqalcazdxYcXS4ZOWSap2ibhSr/yhki
+            I30uFTVlmeLhZCyanLgcqDioFXRWDzZLc3aYE3QeN2x2t0y+AhUxsmunU2rFW87f
+            pbTo6Y3AphKx4wMkx5p2mq2sr1VnUi8OXk3J/wsiq76q6vVupGx8SKt5QiUVgbpK
+            PMU54Z078unFlOI6y85PIvOAXLcK9h6wGgc0XSN4D9a/Jvw/f55Usi/z9nV8xCPn
+            IzGmtiMP8ze022NqjOGIIoZEckJHGV+hndHnzQIDAQABAoIBABx98oHli/TVnMLN
+            amAa/zjVaVExoGaGp2cW4zwk30IeAvxmo0lzEmukVbTx4g9xjGRRP+TRvFYzMI3e
+            VAl5tM7AoO/0cgFU+q+tsDB6/QXW1zzRbvJimziRJJBtQRkPnXRN9JGcYhkpghXv
+            SY7ArByjuNvWcV/9wJi1luBAcFNHe1e+SLDixZuynmXfWlHHnljAFqjU30FUftep
+            rHsYblOXy7Rnwvd0pa3J251UrURxesBhVhHJ+svF1rJVJv6iLvsW1AsaiGH3Xc4L
+            nqQnnQ7cQf6vELudehlf4Ut1WpVxvPGS+06ipYY2vSwEtvle0ZwuCW4HCQQH50L/
+            4oTfd40CgYEA23J3/PcHk70rLBlD1lbj/NqM26X5gYBdvMeKDWr3eS/A1d0Zo8Gf
+            6OiOHtPwXNtq+qmj9IYMucVqmgubRr1bgoUEA5lv4ra0AM32b6TCQWUlpqECXEa7
+            1JfsgZhpDFWY3svf5TnGO0MD+WNZuRJoeo+GGmT1bspM81m5q9mq1fsCgYEAnfls
+            j9u+3jJgpc6NnWM0Vj14jb0b1kLRkQeUuBXL4h8jZlTA2c1GWhQGvNLViYI1adfO
+            oF0HnacJnMt6zihk9NBKPwZ3zJKnFsFVXzAuqqDuj1c7UwbmshtJ4eQhDuXwKMwG
+            gIkogbGbrJgvw8o1mtkkceEg8HtnDdnqcEjb9tcCgYEA19qwy9LxUREx9h6j66Fs
+            gLs48pU/53IswhREZw5gfoPKWpMxNTKv6JlXslsmgzAQ+p8C9vMkcVcOlJf2FI8O
+            BERyvlefBpJQXLo7PXYC3fBwKIcXm0y4VVVa/d689bT8uaowgXli08gHkLd4+eJx
+            gpzKfAvynxe+uV/4kmF4+SECgYAH1YCuuaUDe9gTIOUg8vR7elzqGoCw5WtjF88m
+            Od58fjLRNk7B/k4I1Yln/8SbJxvi/dK/XR2tkcUGQ4j5hENNaK7l5To3qOYkWL4V
+            FFycFZL/BMJqYaM7HeNSEnAZPwnj3ApOgX7Cv74Klxl3SiXSYgZOp21sv5Hiu/XG
+            T7aozQKBgAF62wS43e86PjlZuCM9Na2stk3/NDZDfOotcotsJqaxINbqZckD/U5k
+            nevzv2SYo+vArC8EK+Yq/rtK6UIh5ENG4CDjFnAShB/dN6i2ketSyNy+EReat/Nq
+            oisheqYlSYoxQOGV3l/F5jkAVdZwR2YwdNFUl4MCH11ePwC6NNgL
+            -----END RSA PRIVATE KEY-----
+            " > key.pem
           chmod 400 key.pem
           ssh -i key.pem ubuntu@44.200.50.69 "cd /home/ubuntu/Apexcrew && git pull"
 
