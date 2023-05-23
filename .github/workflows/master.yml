@@ -26,13 +26,13 @@ jobs:
 
       - name: SSH into EC2 instance and pull code
         run: |
-          echo "$EC2_PRIVATE_KEY" > key.pem
+          echo "${{ secrets.EC2_PRIVATE_KEY }}" > key.pem
           chmod 400 key.pem
-          ssh -i key.pem ubuntu@$EC2_INSTANCE_IP "cd /home/ubuntu/Apexcrew && git pull"
+          ssh -i key.pem ubuntu@${{ secrets.EC2_INSTANCE_IP }} "cd /home/ubuntu/Apexcrew && git pull"
 
       - name: Start Docker Compose
         run: |
-          ssh -i key.pem ubuntu@$EC2_INSTANCE_IP "cd /home/ubuntu/Apexcrew && docker-compose up -d"
+          ssh -i key.pem ubuntu@${{ secrets.EC2_INSTANCE_IP }} "cd /home/ubuntu/Apexcrew && docker-compose up -d"
 
       - name: Cleanup
         run: |
