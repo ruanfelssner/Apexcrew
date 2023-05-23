@@ -1,0 +1,17 @@
+
+.env
+ignore/
+/wp-admin/
+/wp-content/index.php
+/wp-content/plugins/
+/wp-content/themes/
+/wp-includes/
+/index.php
+/license.txt
+/readme.html
+/wp-*.php
+/xmlrpc.php
+
+/wp-content/uploads/
+*.log
+/.htaccess
